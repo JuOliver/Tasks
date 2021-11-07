@@ -1,0 +1,15 @@
+<app-header></app-header>
+<div>
+    <h1 appGreen >Buscar: </h1>
+    <input type="text" (keyup)="searchTask($event)">
+</div>
+
+<!-- Property binding [] pega item do task.component-->
+<div *ngFor="let item of filteredTasks">
+    <app-task [tarefa]="item"></app-task>
+</div>
+
+<div *ngIf="filteredTasks.length === 0">
+    <h1>Não existe tarefas para essa busca!</h1>
+</div>
+<app-footer></app-footer>
